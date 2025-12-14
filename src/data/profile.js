@@ -2,7 +2,7 @@
 
   export const profile = {
     name: "Gnaneswar Thavva",
-    titles: ["MERN Stack Developer","CSE Student", "Full Stack Developer" ],
+    titles: ["MERN Stack Developer","Computer Science Student", "Full Stack Developer" ],
     bio: [
       //"I build scalable, high-performance applications using TypeScript, JavaScript, React, Node.js, AWS, and LLM orchestration.",
       //"From crafting intuitive frontends to designing robust APIs, cloud architecture, and intelligent AI workflows, I deliver quality code that drives real impact.",
