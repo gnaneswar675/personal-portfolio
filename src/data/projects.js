@@ -46,6 +46,8 @@ export const projects = [
     },
     tags: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'SQLite'],
   },
+  
 ];
 
 
+ 
