@@ -1,5 +1,35 @@
 export const projects = [
   {
+    title: 'SkillMap AI',
+    period: 'May 2026',
+    bullets: [
+      'Built an AI-powered learning platform that generates personalized learning roadmaps, study notes, and curated resources based on user goals.',
+      'Developed interactive learning paths with progress tracking, visual roadmap generation, and analytics using React Flow and PostgreSQL.',
+      'Integrated Groq-powered LLM APIs to generate concept explanations, interview questions, revision notes, and structured learning content.',
+      'Implemented secure authentication, user profile management, and persistent learning data using Clerk, Prisma, and PostgreSQL.',
+    ],
+    links: {
+      code: 'https://github.com/gnaneswar675/SkillMapAi',
+      demo: 'https://skillmapai-675.vercel.app/',
+    },
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Clerk', 'Groq AI', 'React Flow'],
+  },
+  {
+    title: 'Vendora',
+    period: 'May 2026',
+    bullets: [
+      'Built a full-featured multi-vendor marketplace enabling buyers to discover tech products and vendors to manage stores, inventory, and orders.',
+      'Implemented role-based authentication and real-time data management using Firebase Authentication and Firestore.',
+      'Developed product browsing, category filtering, shopping cart, order tracking, and vendor management functionalities with scalable frontend architecture.',
+      'Created a premium motion-rich user experience featuring responsive layouts, interactive animations, and modern marketplace design principles.',
+    ],
+    links: {
+      code: 'https://github.com/gnaneswar675/vendora',
+      demo: 'https://vendora-app6.vercel.app/',
+    },
+    tags: ['Next.js', 'TypeScript', 'Firebase', 'Firestore', 'Tailwind CSS', 'Framer Motion'],
+  },
+  {
     title: 'Civic Solver',
     period: 'June 2025 - July 2025',
     bullets: [
@@ -11,6 +41,21 @@ export const projects = [
     links: {
       code: 'https://github.com/gnaneswar675/community-report-frontend',
       demo: 'https://community-report.onrender.com/',
+    },
+    tags: ['MongoDB','Express.js','React.js', 'Node.js', 'HTML' , 'CSS', 'Postman API', ],
+  },
+  {
+    title: 'Question Management Sheet',
+    period: 'February 2026',
+    bullets: [
+      'Built an interactive single-page web application with a hierarchical structure (Topic → Subtopic → Questions).',
+      'Implemented expand/collapse navigation for focused and intuitive content browsing.',
+      'Added real-time CRUD operations using reusable React components.',
+      'Designed a fully responsive UI optimized for both mobile and desktop using Tailwind CSS.',
+    ],
+    links: {
+      code: 'https://github.com/gnaneswar675/question-management-sheet',
+      demo: 'https://codolio-sheet.vercel.app',
     },
     tags: ['MongoDB','Express.js','React.js', 'Node.js', 'HTML' , 'CSS', 'Postman API', ],
   },

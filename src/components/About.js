@@ -141,16 +141,26 @@ const About = () => {
               }}
             />
 
-            <div className="relative w-full max-w-sm overflow-hidden rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm shadow-lg group-hover:shadow-xl transition-all duration-500">
+            <motion.div 
+              className="relative w-full max-w-sm overflow-hidden rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm shadow-lg group-hover:shadow-2xl transition-all duration-500"
+              animate={{
+                y: [0, -8, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
               <motion.img
                 src={profile.image || gnaneswarpic}
                 alt="Gnaneswar Thavva"
                 className="w-full h-auto"
                 loading="lazy"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.4 }}
               />
-            </div>
+            </motion.div>
           </div>
 
           <motion.div
@@ -163,7 +173,7 @@ const About = () => {
               href={`mailto:${profile.social.email}`}
               aria-label="Email"
               className="p-2 rounded-lg bg-gradient-to-r from-primary/10 to-purple-500/10 hover:from-primary/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 border border-border/50"
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileHover={{ scale: 1.15, rotate: 8 }}
               whileTap={{ scale: 0.95 }}>
               <FaEnvelope />
             </motion.a>
@@ -173,7 +183,7 @@ const About = () => {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="p-2 rounded-lg bg-gradient-to-r from-primary/10 to-purple-500/10 hover:from-primary/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 border border-border/50"
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileHover={{ scale: 1.15, rotate: 8 }}
               whileTap={{ scale: 0.95 }}>
               <FaLinkedin />
             </motion.a>
@@ -183,7 +193,7 @@ const About = () => {
               rel="noopener noreferrer"
               aria-label="GitHub"
               className="p-2 rounded-lg bg-gradient-to-r from-primary/10 to-purple-500/10 hover:from-primary/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 border border-border/50"
-              whileHover={{ scale: 1.1, rotate: -5 }}
+              whileHover={{ scale: 1.15, rotate: -8 }}
               whileTap={{ scale: 0.95 }}>
               <FaGithub />
             </motion.a>
@@ -192,9 +202,9 @@ const About = () => {
               href={profile.social.codechef}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="x"
+              aria-label="CodeChef"
               className="p-2 rounded-lg bg-gradient-to-r from-primary/10 to-purple-500/10 hover:from-primary/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 border border-border/50"
-              whileHover={{ scale: 1.1, rotate: -5 }}
+              whileHover={{ scale: 1.15, rotate: -8 }}
               whileTap={{ scale: 0.95 }}>
               <SiCodechef />
             </motion.a>
@@ -203,9 +213,9 @@ const About = () => {
               href={profile.social.leetcode}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="x"
+              aria-label="LeetCode"
               className="p-2 rounded-lg bg-gradient-to-r from-primary/10 to-purple-500/10 hover:from-primary/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 border border-border/50"
-              whileHover={{ scale: 1.1, rotate: -5 }}
+              whileHover={{ scale: 1.15, rotate: -8 }}
               whileTap={{ scale: 0.95 }}>
               <SiLeetcode />
             </motion.a>
@@ -214,9 +224,9 @@ const About = () => {
               href={profile.social.codeforces}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="x"
+              aria-label="Codeforces"
               className="p-2 rounded-lg bg-gradient-to-r from-primary/10 to-purple-500/10 hover:from-primary/20 hover:to-purple-500/20 transition-all duration-300 hover:scale-110 border border-border/50"
-              whileHover={{ scale: 1.1, rotate: -5 }}
+              whileHover={{ scale: 1.15, rotate: -8 }}
               whileTap={{ scale: 0.95 }}>
              <SiCodeforces />
             </motion.a>
@@ -224,6 +234,35 @@ const About = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Floating Scroll Down Indicator */}
+      <motion.div 
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1 cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 0.6, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        onClick={() => {
+          document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
+        }}
+      >
+        <span className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground mb-1">Scroll Down</span>
+        <div 
+          className="w-6 h-10 border border-muted-foreground/50 rounded-full flex justify-center p-1.5"
+        >
+          <motion.div 
+            className="w-1 h-2 bg-muted-foreground/80 rounded-full"
+            animate={{
+              y: [0, 14, 0],
+              opacity: [1, 0, 1]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
+      </motion.div>
     </section>
   );
 };

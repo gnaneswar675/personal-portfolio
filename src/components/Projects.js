@@ -55,16 +55,18 @@ const Projects = () => {
           {projects.map((proj, idx) => (
             <motion.div
               key={idx}
-              className="group relative rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-3"
+              className="group relative rounded-xl border border-border/50 hover:border-primary/30 bg-card/50 backdrop-blur-sm p-6 shadow-lg hover:shadow-2xl transition-all duration-550 hover:-translate-y-3 overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               whileHover={{ 
-                scale: 1.02,
-                boxShadow: "0 25px 50px rgba(0,0,0,0.15)"
+                scale: 1.025,
               }}
             >
+              {/* Glowing background blur behind card on hover */}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md" />
+
               {/* Floating accent */}
               <motion.div 
                 className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-r from-primary to-purple-500 rounded-full opacity-70"
@@ -81,10 +83,10 @@ const Projects = () => {
 
               {/* Glow effect on hover */}
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-primary/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                className="absolute inset-0 bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500"
                 animate={{ 
                   scale: [1, 1.05, 1],
-                  opacity: [0, 0.1, 0]
+                  opacity: [0, 0.2, 0]
                 }}
                 transition={{ 
                   duration: 4,
@@ -198,7 +200,7 @@ const Projects = () => {
                     {proj.tags.map((t, i) => (
                       <motion.span 
                         key={i} 
-                        className="inline-flex items-center rounded-md border border-border/50 px-2 py-1 text-[11px] text-muted-foreground bg-gradient-to-r from-muted/30 to-muted/50"
+                        className="inline-flex items-center rounded-md border border-primary/20 px-2.5 py-0.5 text-[11px] font-medium text-foreground bg-primary/5 hover:bg-primary/10 hover:border-primary/45 transition-colors duration-300"
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}

@@ -102,47 +102,37 @@ const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ 
                       duration: 0.3, 
-                      delay: (index * 0.1) + (skillIndex * 0.05) 
+                      delay: (index * 0.1) + (skillIndex * 0.03) 
                     }}
                     whileHover={{ 
-                      scale: 1.1,
-                      rotate: [0, -5, 5, 0]
+                      scale: 1.12,
+                      y: -4
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <div className="relative">
                       {/* Glow effect on hover */}
-                      <motion.div 
-                        className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        animate={{ 
-                          scale: [1, 1.1, 1],
-                          opacity: [0, 0.3, 0]
-                        }}
-                        transition={{ 
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
+                      <div 
+                        className="absolute inset-0 bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
                       />
                       
-                      <div className="relative h-16 w-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-card to-muted/50 border border-border/50 group-hover:border-primary/50 transition-all duration-300 group-hover:shadow-lg">
+                      <div className="relative h-16 w-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-card to-muted/40 border border-border/60 group-hover:border-primary/45 transition-all duration-300 group-hover:shadow-md group-hover:shadow-primary/5">
                         <motion.img 
                           src={skill.icon} 
                           alt={skill.name} 
-                          className="max-h-8 max-w-8 transition-transform duration-300 group-hover:scale-110" 
+                          className="max-h-9 max-w-9" 
                           loading="lazy"
-                          whileHover={{ rotate: 360 }}
-                          transition={{ duration: 0.6 }}
+                          whileHover={{ rotate: 12, scale: 1.05 }}
+                          transition={{ type: "spring", stiffness: 300, damping: 12 }}
                         />
                       </div>
                     </div>
                     
-                    <motion.span 
-                      className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300 mt-2"
-                      whileHover={{ y: -2 }}
+                    <span 
+                      className="text-xs text-muted-foreground group-hover:text-foreground transition-colors duration-300 mt-2 font-medium"
                     >
                       {skill.name}
-                    </motion.span>
+                    </span>
                   </motion.div>
                 ))}
               </div>

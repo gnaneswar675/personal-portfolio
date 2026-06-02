@@ -71,12 +71,15 @@ const Experience = () => {
               >
                 {/* Timeline dot */}
                 <motion.div 
-                  className="absolute left-2 top-0 w-4 h-4 bg-gradient-to-r from-primary to-purple-500 rounded-full border-2 border-background shadow-lg"
+                  className="absolute left-2 top-0 w-4 h-4 bg-gradient-to-r from-primary to-purple-500 rounded-full border-2 border-background shadow-lg z-10 cursor-pointer"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
-                  whileHover={{ scale: 1.2 }}
+                  whileHover={{ 
+                    scale: 1.4,
+                    boxShadow: "0 0 12px hsl(var(--primary))"
+                  }}
                 />
 
                 {/* Floating accent */}
@@ -94,12 +97,13 @@ const Experience = () => {
                 />
 
                 <motion.div 
-                  className="rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+                  className="rounded-xl border border-border/50 hover:border-primary/30 bg-card/50 backdrop-blur-sm p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 relative group"
                   whileHover={{ 
-                    scale: 1.01,
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                    scale: 1.015,
                   }}
                 >
+                  {/* Glowing background behind card on hover */}
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-500 blur-sm" />
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
                     <div>
                       <motion.h3 

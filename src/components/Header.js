@@ -5,7 +5,8 @@ import { cn } from '../lib/utils';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -17,6 +18,11 @@ const Header = () => {
         setScrolled(true);
       } else {
         setScrolled(false);
+      }
+
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        setScrollProgress((window.scrollY / totalHeight) * 100);
       }
     };
 
@@ -38,7 +44,17 @@ const Header = () => {
   };
 
   return (
-    <header className={cn('sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60')}>
+    <header className={cn(
+      'sticky top-0 z-50 border-b border-border transition-all duration-350',
+      scrolled 
+        ? 'bg-background/90 backdrop-blur-md shadow-md border-border/80' 
+        : 'bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-none border-transparent'
+    )}>
+      {/* Scroll Progress Bar */}
+      <div 
+        className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-primary via-purple-500 to-pink-500 transition-all duration-75 ease-out"
+        style={{ width: `${scrollProgress}%` }}
+      />
       <div className="container">
         <nav className="flex items-center justify-between py-4">
           <button

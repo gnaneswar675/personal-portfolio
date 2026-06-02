@@ -66,49 +66,76 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-foreground/[0.02]">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-foreground/[0.01]">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Contact Me</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
+            Contact Me
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">Feel free to reach out for opportunities, collaboration, or questions.</p>
         </div>
 
-        <div className="flex flex-wrap gap-10">
-          <div className="flex-1 min-w-[280px]">
+        <div className="flex flex-col lg:flex-row gap-10">
+          <div className="flex-1 min-w-[280px] space-y-6">
             <ToastContainer />
-            <h3 className="text-xl font-semibold">Get In Touch</h3>
-            <p className="text-muted-foreground mt-2">Feel free to contact me for any work or suggestions below.</p>
+            <div>
+              <h3 className="text-xl font-semibold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">Get In Touch</h3>
+              <p className="text-muted-foreground mt-2">I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+            </div>
 
-            <div className="mt-6 space-y-4">
-              <div className="flex items-center gap-3">
-                <FaEnvelope className="text-primary" />
-                <a href="mailto:thavvagnaneswar675@gmail.com" className="hover:text-primary transition-colors">
-                  thavvagnaneswar675@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <FaLinkedin className="text-primary" />
-                <a href="https://www.linkedin.com/in/gnaneswarthavva675/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  linkedin.com/in/gnaneswarthavva675
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <FaGithub className="text-primary" />
-                <a href="https://github.com/gnaneswar675" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  github.com/gnaneswar675
-                </a>
-              </div>
+            <div className="grid gap-4">
+              <a 
+                href="mailto:thavvagnaneswar675@gmail.com" 
+                className="flex items-center gap-4 rounded-xl border border-border/50 hover:border-primary/30 bg-card/40 backdrop-blur-sm p-4 hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <FaEnvelope />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Email Me</p>
+                  <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">thavvagnaneswar675@gmail.com</p>
+                </div>
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/gnaneswarthavva675/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-4 rounded-xl border border-border/50 hover:border-primary/30 bg-card/40 backdrop-blur-sm p-4 hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <FaLinkedin />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">LinkedIn</p>
+                  <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">linkedin.com/in/gnaneswarthavva675</p>
+                </div>
+              </a>
+              <a 
+                href="https://github.com/gnaneswar675" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-4 rounded-xl border border-border/50 hover:border-primary/30 bg-card/40 backdrop-blur-sm p-4 hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <FaGithub />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">GitHub</p>
+                  <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300">github.com/gnaneswar675</p>
+                </div>
+              </a>
             </div>
           </div>
 
           <div className="flex-1 min-w-[280px]">
-            <form className="rounded-md border border-border bg-card p-5 shadow-sm" onSubmit={handleSubmit}>
+            <form className="rounded-2xl border border-border/60 bg-card/60 backdrop-blur-sm p-6 shadow-lg hover:shadow-2xl hover:border-primary/20 transition-all duration-500" onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label htmlFor="name" className="mb-2 block text-sm font-medium">Name</label>
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-foreground">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="w-full rounded-lg border border-border/80 bg-background/50 px-3.5 py-2.5 text-sm outline-none transition-all duration-300 focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -116,12 +143,12 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="email" className="mb-2 block text-sm font-medium">Email</label>
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-foreground">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="w-full rounded-lg border border-border/80 bg-background/50 px-3.5 py-2.5 text-sm outline-none transition-all duration-300 focus:border-primary/50 focus:ring-2 focus:ring-primary/20"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -129,11 +156,11 @@ const Contact = () => {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="message" className="mb-2 block text-sm font-medium">Message</label>
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-foreground">Message</label>
                 <textarea
                   id="message"
                   name="message"
-                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring min-h-[120px]"
+                  className="w-full rounded-lg border border-border/80 bg-background/50 px-3.5 py-2.5 text-sm outline-none transition-all duration-300 focus:border-primary/50 focus:ring-2 focus:ring-primary/20 min-h-[120px]"
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -143,7 +170,7 @@ const Contact = () => {
               </div>
               <button 
                 type="submit" 
-                className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-50"
+                className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-primary to-purple-500 hover:from-primary/95 hover:to-purple-500/95 px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
