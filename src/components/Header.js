@@ -46,12 +46,12 @@ const Header = () => {
   return (
     <header className={cn(
       'sticky top-0 z-50 border-b border-border transition-all duration-350',
-      scrolled 
-        ? 'bg-background/90 backdrop-blur-md shadow-md border-border/80' 
+      scrolled
+        ? 'bg-background/90 backdrop-blur-md shadow-md border-border/80'
         : 'bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-none border-transparent'
     )}>
       {/* Scroll Progress Bar */}
-      <div 
+      <div
         className="absolute top-0 left-0 h-[3px] bg-gradient-to-r from-primary via-purple-500 to-pink-500 transition-all duration-75 ease-out"
         style={{ width: `${scrollProgress}%` }}
       />
@@ -72,9 +72,9 @@ const Header = () => {
             <li><a className="hover:text-primary transition-colors" href="#certifications" onClick={(e) => scrollToSection('certifications', e)}>Certifications</a></li>
             <li><a className="hover:text-primary transition-colors" href="#contact" onClick={(e) => scrollToSection('contact', e)}>Contact</a></li>
             <li>
-              <a 
-                href="https://drive.google.com/file/d/1znTH9Y9reji0CarwM5K50SpnbtueBZSe/view" 
-                download="Resume.pdf" 
+              <a
+                href="https://drive.google.com/file/d/1_OtO8q8oEXAhFz-U4wwyIwITpDH1erPr/view?usp=drive_link"
+                download="Resume.pdf"
                 className="inline-flex h-9 items-center rounded-md border border-border px-3 text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 Resume
@@ -102,9 +102,9 @@ const Header = () => {
               <li><a className="block hover:text-primary" href="#certifications" onClick={(e) => scrollToSection('certifications', e)}>Certifications</a></li>
               <li><a className="block hover:text-primary" href="#contact" onClick={(e) => scrollToSection('contact', e)}>Contact</a></li>
               <li>
-                <a 
-                  href="https://drive.google.com/file/d/1fldTztMS-MU08XEVPBXLoe1RSHx5kZ7T/view?usp=sharing" 
-                  download="Resume.pdf" 
+                <a
+                  href="https://drive.google.com/file/d/1_OtO8q8oEXAhFz-U4wwyIwITpDH1erPr/view?usp=drive_link"
+                  download="Resume.pdf"
                   className="inline-flex h-9 items-center rounded-md border border-border px-3 text-sm hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
                   Resume

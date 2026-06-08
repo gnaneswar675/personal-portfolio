@@ -12,7 +12,7 @@ export const projects = [
       code: 'https://github.com/gnaneswar675/SkillMapAi',
       demo: 'https://skillmapai-675.vercel.app/',
     },
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Clerk', 'Groq AI', 'React Flow'],
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Supabase', 'Clerk', 'Groq AI', 'React Flow'],
   },
   {
     title: 'Vendora',
@@ -27,7 +27,7 @@ export const projects = [
       code: 'https://github.com/gnaneswar675/vendora',
       demo: 'https://vendora-app6.vercel.app/',
     },
-    tags: ['Next.js', 'TypeScript', 'Firebase', 'Firestore', 'Tailwind CSS', 'Framer Motion'],
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Framer Motion'],
   },
   {
     title: 'Civic Solver',
@@ -42,7 +42,7 @@ export const projects = [
       code: 'https://github.com/gnaneswar675/community-report-frontend',
       demo: 'https://community-report.onrender.com/',
     },
-    tags: ['MongoDB','Express.js','React.js', 'Node.js', 'HTML' , 'CSS', 'Postman API', ],
+    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'HTML', 'CSS', 'Postman API',],
   },
   {
     title: 'Question Management Sheet',
@@ -57,7 +57,7 @@ export const projects = [
       code: 'https://github.com/gnaneswar675/question-management-sheet',
       demo: 'https://codolio-sheet.vercel.app',
     },
-    tags: ['MongoDB','Express.js','React.js', 'Node.js', 'HTML' , 'CSS', 'Postman API', ],
+    tags: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'HTML', 'CSS', 'Postman API',],
   },
   {
     title: 'VIIT Conference App',
@@ -91,8 +91,7 @@ export const projects = [
     },
     tags: ['Django', 'Python', 'HTML', 'CSS', 'JavaScript', 'SQLite'],
   },
-  
+
 ];
 
 
- 
