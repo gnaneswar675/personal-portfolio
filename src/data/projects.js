@@ -25,7 +25,7 @@ export const projects = [
     ],
     links: {
       code: 'https://github.com/gnaneswar675/vendora',
-      demo: 'https://vendora-app6.vercel.app/',
+      demo: 'https://vendora-675.vercel.app/',
     },
     tags: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Framer Motion'],
   },
@@ -93,5 +93,3 @@ export const projects = [
   },
 
 ];
-
-
